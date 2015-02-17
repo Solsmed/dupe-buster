@@ -17,9 +17,9 @@ First, make sure there dupelogs folder exists (and is clean, for your convenienc
 mkdir dupelogs
 Then run the ListDupes program in a similar fashion as the Indexer:
 java -cp '.:lib/lire.jar:lib/lucene-analyzers-common-4.10.2.jar:lib/lucene-core-4.10.2.jar' ListDupes
-This will (quickly) scan the index and any cases of dupes that are found will be output to logfiles placed in the dupelogs folder. For example, if there are 20 identically looking images of Tux, these 20 will constitute a dupe case and the canonical filenames of all 20 will be listed in one log file, named "method-0-dupecase-15.log". The numbering of the dupecase is arbitrary. The numbering of the method is always 0, since only one feature extractor is (used at the moment).
+This will (quickly) scan the index and any cases of dupes that are found will be output to logfiles placed in the dupelogs folder. For example, if there are 20 identically looking images of Tux, these 20 will constitute a dupe case and the canonical filenames of all 20 will be listed in one log file, named "method-0-dupecase-15.log". The numbering of the dupecase is arbitrary. The numbering of the method is always 0, as there is currently only one feature extractor used for indexing.
 
 
 Compiling:
-javac -cp '.:lib/lire.jar:lib/lucene-analyzers-common-4.10.2.jar:lib/lucene-core-4.10.2.jar' Indexer
-javac -cp '.:lib/lire.jar:lib/lucene-analyzers-common-4.10.2.jar:lib/lucene-core-4.10.2.jar' ListDupes
+javac -cp 'lib/lire.jar:lib/lucene-analyzers-common-4.10.2.jar:lib/lucene-core-4.10.2.jar' -Xlint:deprecation Indexer.java
+javac -cp 'lib/lire.jar:lib/lucene-analyzers-common-4.10.2.jar:lib/lucene-core-4.10.2.jar' -Xlint:deprecation ListDupes.java
